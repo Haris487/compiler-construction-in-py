@@ -1,0 +1,5 @@
+venv
+*.pyc
+*.lexical
+*.mi
+!sample_code_file.mi

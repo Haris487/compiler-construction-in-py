@@ -1,0 +1,9 @@
+syntax = {
+  "statement" : {
+    "var" : {
+      ">identifier" : {
+        
+      }
+    }
+  }
+}
