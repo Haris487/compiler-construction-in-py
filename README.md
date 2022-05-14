@@ -1,5 +1,9 @@
 # compiler-construction-in-py
 
+## Python version
+
+python3.9
+
 ## How to Use
 
 install git
