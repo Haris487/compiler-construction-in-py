@@ -1,6 +1,7 @@
 from unicodedata import name
 
 import sys
+from lib.checkCfg import CheckCfg
 from lib.fileio import read_file, write_file
 from lib.text2words import Text2Words
 from lib.words2tokens import Words2Tokens
@@ -30,6 +31,12 @@ def main():
   print(words2Tokens.tokens)
   lexical_text = " ".join(words2Tokens.tokens)
   write_file(filename+".lexical"," "+lexical_text)
+  checkcfg = CheckCfg(words2Tokens.tokens)
+  try:
+    checkcfg.parse()
+    print("CFG Check sucessfull")
+  except Exception as e:
+    print("Syntax Error :", e)
 
 
 if __name__ == "__main__":

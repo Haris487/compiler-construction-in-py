@@ -5,7 +5,7 @@ class Words2Tokens():
     self.words = words
     self.words_len = len(words)
     self.tokens = []
-    self.lineno = 0
+    self.lineno = 1
 
   def parse(self):
     for i in range(self.words_len):
@@ -22,11 +22,16 @@ class Words2Tokens():
 
       keyword = None
       for token in tokens_list:
-        if re.match(token["regex"], cur):
-          keyword = token["keyword"]
-          break
+        try:
+          # print("matching %s with %s"%(cur,token["regex"]))
+          if re.match(token["regex"], cur):
+            keyword = str(token["keyword"])
+            break
+        except Exception as e:
+          print("Error in parsing token '%s' at line no %d"%(cur,self.lineno))
+          print("the error message is => ",e)
       
-      self.tokens.append(keyword)
+      self.tokens.append(str(keyword))
 
       if keyword is None:
         print("ERROR unidentified token %s at line no %d"%(cur,self.lineno))

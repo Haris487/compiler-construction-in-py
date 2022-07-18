@@ -1,4 +1,14 @@
-var a = 2;
-var b = 3;
-var c = a + b;
-print(c);
+str a = "hi my name is ";
+float b = 3.5;
+char c = 'h';
+int d = 92;
+bool e = true;
+int f;
+
+a = "no no";
+str a = "no "+"no" + "no";
+
+
+while (c > b){
+  f = 99;
+}
